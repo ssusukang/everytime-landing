@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <title>EVERYTIME - Every moment of your university life</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- PC GNB -->
+  <header class="gnb">
+    <div class="logo">
+      <img src="asset/아이콘/type=Full, name=Logo, theme=Lightmode.png" alt="EVERYTIME">
+    </div>
+    <nav class="nav-menu">
+      <a href="#" class="nav-item">Đánh giá môn học</a>
+      <a href="#" class="nav-item">Thời khóa biểu</a>
+      <a href="#" class="nav-item">Cộng đồng</a>
+      <a href="#" class="nav-item">Trường cung cấp</a>
+      <a href="#" class="nav-item">Download</a>
+      <div class="country-selector">
+        <span>🇻🇳 Việt Nam</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="intro-inner">
+      <div class="intro-left">
+        <div class="intro-text">
+          <h1>Every moment of<br>your university life</h1>
+          <p class="intro-description">Connect with students at your school<br>and make campus life more fun and meaningful.</p>
+        </div>
+        <div class="download-buttons">
+          <!-- App Store Button -->
+          <a href="#" class="btn-download">
+            <img src="asset/아이콘/App Store.png" alt="Download on App Store">
+          </a>
+          <!-- Google Play Button -->
+          <a href="#" class="btn-download">
+            <img src="asset/아이콘/Google Play.png" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+      <div class="intro-right">
+        <!-- ID Cards -->
+        <div class="cards-wrapper">
+          <!-- ID Card group - 왼쪽, 위로 스크롤 -->
+          <div class="id-cards-column id-cards-left-col">
+            <img src="asset/ID card group.png" alt="Student ID Cards">
+            <img src="asset/ID card group.png" alt="Student ID Cards" aria-hidden="true">
+          </div>
+          <!-- ID Card group - 오른쪽, 아래로 스크롤 -->
+          <div class="id-cards-column id-cards-right-col">
+            <img src="asset/ID card group.png" alt="Student ID Cards">
+            <img src="asset/ID card group.png" alt="Student ID Cards" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LectureReview Sticky Scroll Section -->
+  <section class="lecture-review-sticky">
+    <div class="lecture-sticky-container">
+      <!-- Sticky Frame -->
+      <div class="lecture-sticky-content">
+        <div class="phone-mockup-sticky">
+          <!-- Phone Screens -->
+          <img src="asset/아이콘/강의평 1.png" alt="Course Review Screen" class="phone-screen-slide active" data-slide="0">
+          <img src="asset/아이콘/강의평 2.png" alt="Write Review Screen" class="phone-screen-slide" data-slide="1">
+        </div>
+        <div class="lecture-text-sticky">
+          <h2 class="section-label">Course Review</h2>
+          <div class="lecture-descriptions">
+            <p class="section-title description-slide active" data-slide="0">Read honest reviews from students who actually took the course.</p>
+            <p class="section-title description-slide" data-slide="1">Your course review can help someone next semester.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Spacers -->
+      <div class="scroll-spacer" data-slide="0"></div>
+      <div class="scroll-spacer" data-slide="1"></div>
+    </div>
+  </section>
+
+  <script>
+    // Sticky Scroll Interaction
+    const stickySection = document.querySelector('.lecture-review-sticky');
+    const slides = document.querySelectorAll('.phone-screen-slide');
+    const descriptions = document.querySelectorAll('.description-slide');
+    const spacers = document.querySelectorAll('.scroll-spacer');
+
+    let currentSlide = 0;
+
+    function updateSlide(index) {
+      if (currentSlide === index) return;
+
+      // Fade out current
+      slides[currentSlide].classList.remove('active');
+      descriptions[currentSlide].classList.remove('active');
+
+      // Fade in new
+      slides[index].classList.add('active');
+      descriptions[index].classList.add('active');
+
+      currentSlide = index;
+    }
+
+    function handleScroll() {
+      const rect = stickySection.getBoundingClientRect();
+      const sectionHeight = stickySection.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Calculate scroll progress within section
+      const scrollProgress = -rect.top / (sectionHeight - windowHeight);
+
+      if (scrollProgress < 0 || scrollProgress > 1) return;
+
+      // Determine which slide to show based on scroll position
+      const slideIndex = Math.min(Math.floor(scrollProgress * 2), 1);
+      updateSlide(slideIndex);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+  </script>
+</body>
+</html>
