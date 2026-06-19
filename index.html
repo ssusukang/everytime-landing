@@ -12,20 +12,29 @@
 <body>
   <!-- PC GNB -->
   <header class="gnb">
-    <div class="logo">
+    <a href="#" onclick="window.location.reload(); window.scrollTo(0,0); return false;" class="logo">
       <img src="asset/type=Full, name=Logo, theme=Lightmode.png" alt="EVERYTIME">
-    </div>
+    </a>
     <nav class="nav-menu">
-      <a href="#" class="nav-item">Đánh giá môn học</a>
-      <a href="#" class="nav-item">Thời khóa biểu</a>
-      <a href="#" class="nav-item">Cộng đồng</a>
-      <a href="#" class="nav-item">Trường cung cấp</a>
-      <a href="#" class="nav-item">Download</a>
-      <div class="country-selector">
-        <span>🇻🇳 Việt Nam</span>
+      <a href="#course-review" class="nav-item" data-vn="Đánh giá môn học" data-en="Course Review">Đánh giá môn học</a>
+      <a href="#timetable" class="nav-item" data-vn="Thời khóa biểu" data-en="Timetable">Thời khóa biểu</a>
+      <a href="#community" class="nav-item" data-vn="Cộng đồng" data-en="Community">Cộng đồng</a>
+      <a href="#university" class="nav-item nav-item-university" data-vn="Trường cung cấp" data-en="University supported">Trường cung cấp</a>
+      <a href="#download" class="nav-item" data-vn="Download" data-en="Download">Download</a>
+      <div class="country-selector" id="countrySelector">
+        <span id="selectedCountry">🇻🇳 Việt Nam</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M4 6L8 10L12 6" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+        <div class="country-dropdown" id="countryDropdown">
+          <div class="country-option" data-country="🇻🇳 Việt Nam">🇻🇳 Việt Nam</div>
+          <div class="country-option" data-country="🇯🇵 日本">🇯🇵 日本</div>
+          <div class="country-option" data-country="🇹🇼 台灣">🇹🇼 台灣</div>
+          <div class="country-option" data-country="🇮🇩 Indonesia">🇮🇩 Indonesia</div>
+          <div class="country-option" data-country="🇵🇭 Philippines">🇵🇭 Philippines</div>
+          <div class="country-option" data-country="🇸🇬 Singapore">🇸🇬 Singapore</div>
+          <div class="country-option" data-country="Regions" data-display="🌎 Other regions">🌎 Other regions</div>
+        </div>
       </div>
     </nav>
   </header>
@@ -40,11 +49,11 @@
         </div>
         <div class="download-buttons">
           <!-- App Store Button -->
-          <a href="#" class="btn-download">
+          <a href="https://apps.apple.com/vn/app/everytime/id642416310" target="_blank" class="btn-download">
             <img src="asset/App Store.png" alt="Download on App Store">
           </a>
           <!-- Google Play Button -->
-          <a href="#" class="btn-download">
+          <a href="https://play.google.com/store/apps/details?id=com.everytime.v2" target="_blank" class="btn-download">
             <img src="asset/Google Play.png" alt="Get it on Google Play">
           </a>
         </div>
@@ -70,7 +79,7 @@
   </section>
 
   <!-- Course Review Sticky Scroll Section -->
-  <section class="lecture-review-sticky">
+  <section id="course-review" class="lecture-review-sticky">
     <div class="lecture-sticky-container">
       <!-- Sticky Frame -->
       <div class="lecture-sticky-content">
@@ -95,7 +104,7 @@
   </section>
 
   <!-- Timetable Sticky Scroll Section -->
-  <section class="timetable-sticky">
+  <section id="timetable" class="timetable-sticky">
     <div class="timetable-sticky-container">
       <!-- Sticky Frame -->
       <div class="timetable-sticky-content">
@@ -109,7 +118,6 @@
           <h2 class="section-label">Timetable</h2>
           <div class="timetable-descriptions">
             <p class="section-title timetable-description-slide active" data-slide="0">Complete your timetable in just a few taps! Search, add, and arrange courses — and your timetable comes together.</p>
-            <p class="section-title timetable-description-slide" data-slide="1">Complete your timetable in just a few taps! Search, add, and arrange courses — and your timetable comes together.</p>
             <p class="section-title timetable-description-slide" data-slide="2">Your schedule at a glance! Manage your classes and personal plans in one calendar.</p>
           </div>
         </div>
@@ -122,7 +130,210 @@
     </div>
   </section>
 
+  <!-- Community Sticky Scroll Section -->
+  <section id="community" class="community-sticky">
+    <div class="community-sticky-container">
+      <!-- Sticky Frame -->
+      <div class="community-sticky-content">
+        <div class="phone-mockup-sticky">
+          <!-- Phone Screens -->
+          <img src="asset/커뮤니티1.png" alt="Community Board Screen" class="community-screen-slide active" data-slide="0">
+          <img src="asset/커뮤니티2.png" alt="School Verification Screen" class="community-screen-slide" data-slide="1">
+          <img src="asset/커뮤니티3.png" alt="Notification Screen" class="community-screen-slide" data-slide="2">
+        </div>
+        <div class="community-text-sticky">
+          <h2 class="section-label">Community</h2>
+          <div class="community-descriptions">
+            <p class="section-title community-description-slide active" data-slide="0">Assignments, class talk, campus life — share it all with real students at your school.</p>
+            <p class="section-title community-description-slide" data-slide="1">Only verified current students at your school can join.</p>
+            <p class="section-title community-description-slide" data-slide="2">Send notifications directly to students taking the same course.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Spacers -->
+      <div class="scroll-spacer" data-slide="0"></div>
+      <div class="scroll-spacer" data-slide="1"></div>
+      <div class="scroll-spacer" data-slide="2"></div>
+    </div>
+  </section>
+
+  <!-- University Supported Section -->
+  <section id="university" class="university-section">
+    <div class="university-container">
+      <div class="university-text">
+        <h2 class="university-title">Everytime hiện đang cung cấp dịch vụ cho tổng cộng 21 trường đại học</h2>
+        <p class="university-description">Chúng tôi sẽ tiếp tục mở rộng dịch vụ để có thể đồng hành cùng nhiều trường đại học hơn nữa trong thời gian tới</p>
+      </div>
+      <div class="university-logos-wrapper">
+        <div class="university-logos">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU_HUS.png" alt="VNU HUS" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU UET.png" alt="VNU UET" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU USSH.png" alt="VNU USSH" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU UEB.png" alt="VNU UEB" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HUST.png" alt="HUST" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HNUE.png" alt="HNUE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HANU.png" alt="HANU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=NEU.png" alt="NEU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=FTU.png" alt="FTU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=PTIT.png" alt="PTIT" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UEH.png" alt="UEH" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNUHCM UIT.png" alt="VNUHCM UIT" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HCMUNRE.png" alt="HCMUNRE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=SGU.png" alt="SGU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD DUE.png" alt="UD DUE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD DUT.png" alt="UD DUT" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD UTE.png" alt="UD UTE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD VKU.png" alt="UD VKU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=DTU.png" alt="DTU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=TMU.png" alt="TMU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=AJC.png" alt="AJC" class="university-logo">
+          <!-- 무한 스크롤을 위해 복제 -->
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU_HUS.png" alt="VNU HUS" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU UET.png" alt="VNU UET" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU USSH.png" alt="VNU USSH" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNU UEB.png" alt="VNU UEB" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HUST.png" alt="HUST" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HNUE.png" alt="HNUE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HANU.png" alt="HANU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=NEU.png" alt="NEU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=FTU.png" alt="FTU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=PTIT.png" alt="PTIT" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UEH.png" alt="UEH" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=VNUHCM UIT.png" alt="VNUHCM UIT" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=HCMUNRE.png" alt="HCMUNRE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=SGU.png" alt="SGU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD DUE.png" alt="UD DUE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD DUT.png" alt="UD DUT" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD UTE.png" alt="UD UTE" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=UD VKU.png" alt="UD VKU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=DTU.png" alt="DTU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=TMU.png" alt="TMU" class="university-logo">
+          <img src="asset/UnivLogo:Vietnam/type=UnivLogo, name=AJC.png" alt="AJC" class="university-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="download-section">
+    <div class="download-container">
+      <div class="app-logo-container">
+        <img src="asset/Footer/App logo.png" alt="Everytime App Logo" class="app-logo">
+      </div>
+      <img src="asset/wordtype.png" alt="Everytime" class="download-wordmark">
+      <h2 class="download-title">Mọi khoảnh khắc cùng sinh viên</h2>
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/vn/app/everytime/id642416310" target="_blank" class="btn-download">
+          <img src="asset/App Store.png" alt="Download on App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.everytime.v2" target="_blank" class="btn-download">
+          <img src="asset/Google Play.png" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="asset/Footer/vinu.png" alt="Vinu Labs" class="footer-logo">
+        <p class="footer-copyright">© Vinu Labs Inc. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.everytime.vn/vn/policy/terms-of-service" target="_blank" class="footer-link">Điều khoản dịch vụ</a>
+        <a href="https://www.everytime.vn/vn/policy/privacy-policy" target="_blank" class="footer-link">Câu hỏi thường gặp</a>
+        <a href="https://vinulabs.notion.site/C-u-h-i-th-ng-g-p-23f60b856f77807cb163fb7bc4df2644" target="_blank" class="footer-link">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
+    // Country Selector Dropdown
+    const countrySelector = document.getElementById('countrySelector');
+    const countryDropdown = document.getElementById('countryDropdown');
+    const selectedCountry = document.getElementById('selectedCountry');
+    const countryOptions = document.querySelectorAll('.country-option');
+
+    // Function to apply country settings
+    function applyCountrySettings(country) {
+      const isVietnam = country === '🇻🇳 Việt Nam';
+      const navItems = document.querySelectorAll('.nav-item');
+      const universitySection = document.getElementById('university');
+      const universityNavItem = document.querySelector('.nav-item-university');
+
+      // Update selected country display
+      selectedCountry.textContent = country;
+
+      // Update menu language
+      navItems.forEach(item => {
+        if (isVietnam) {
+          item.textContent = item.getAttribute('data-vn');
+        } else {
+          item.textContent = item.getAttribute('data-en');
+        }
+      });
+
+      // Show/hide university section and nav item
+      if (universitySection) {
+        universitySection.style.display = isVietnam ? 'block' : 'none';
+      }
+      if (universityNavItem) {
+        universityNavItem.style.display = isVietnam ? 'flex' : 'none';
+      }
+    }
+
+    // Load saved country from localStorage on page load
+    const savedCountry = localStorage.getItem('selectedCountry');
+    if (savedCountry) {
+      applyCountrySettings(savedCountry);
+    }
+
+    // Toggle dropdown
+    countrySelector.addEventListener('click', function(e) {
+      e.stopPropagation();
+      countryDropdown.classList.toggle('active');
+    });
+
+    // Select country
+    countryOptions.forEach(option => {
+      option.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const country = this.getAttribute('data-country');
+
+        // Save to localStorage
+        localStorage.setItem('selectedCountry', country);
+
+        // Reload page (automatically goes to top)
+        window.location.href = window.location.pathname;
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      countryDropdown.classList.remove('active');
+    });
+
+    // Smooth Scroll Navigation
+    document.querySelectorAll('.nav-item').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          const headerOffset = 62; // GNB 높이
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
     // Sticky Scroll Interaction - Course Review
     const lectureSection = document.querySelector('.lecture-review-sticky');
     const lectureSlides = lectureSection.querySelectorAll('.phone-screen-slide');
@@ -165,11 +376,21 @@
     function updateTimetableSlide(index) {
       if (timetableCurrent === index) return;
 
+      // 목업 이미지는 항상 업데이트
       timetableSlides[timetableCurrent].classList.remove('active');
-      timetableDescriptions[timetableCurrent].classList.remove('active');
-
       timetableSlides[index].classList.add('active');
-      timetableDescriptions[index].classList.add('active');
+
+      // 텍스트 업데이트
+      // 0번 슬라이드(1, 2단계 공통 텍스트), 1번 슬라이드(3단계 텍스트)
+      if (index === 2) {
+        // 3단계: 첫 번째 텍스트 숨기고 두 번째 텍스트 표시
+        timetableDescriptions[0].classList.remove('active');
+        timetableDescriptions[1].classList.add('active');
+      } else {
+        // 1, 2단계: 첫 번째 텍스트 표시하고 두 번째 텍스트 숨김
+        timetableDescriptions[0].classList.add('active');
+        timetableDescriptions[1].classList.remove('active');
+      }
 
       timetableCurrent = index;
     }
@@ -183,13 +404,56 @@
 
       if (scrollProgress < 0 || scrollProgress > 1) return;
 
-      const slideIndex = Math.min(Math.floor(scrollProgress * 3), 2);
+      // 1→2 전환: 빠르게 (0~0.35)
+      // 2→3 전환: 느리게 (0.35~1)
+      let slideIndex;
+      if (scrollProgress < 0.35) {
+        slideIndex = 0;
+      } else if (scrollProgress < 0.65) {
+        slideIndex = 1;
+      } else {
+        slideIndex = 2;
+      }
       updateTimetableSlide(slideIndex);
+    }
+
+    // Sticky Scroll Interaction - Community
+    const communitySection = document.querySelector('.community-sticky');
+    const communitySlides = communitySection.querySelectorAll('.community-screen-slide');
+    const communityDescriptions = communitySection.querySelectorAll('.community-description-slide');
+
+    let communityCurrent = 0;
+
+    function updateCommunitySlide(index) {
+      if (communityCurrent === index) return;
+
+      communitySlides[communityCurrent].classList.remove('active');
+      communityDescriptions[communityCurrent].classList.remove('active');
+
+      communitySlides[index].classList.add('active');
+      communityDescriptions[index].classList.add('active');
+
+      communityCurrent = index;
+    }
+
+    function handleCommunityScroll() {
+      const rect = communitySection.getBoundingClientRect();
+      const sectionHeight = communitySection.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      const scrollProgress = -rect.top / (sectionHeight - windowHeight);
+
+      if (scrollProgress < 0 || scrollProgress > 1) return;
+
+      // Course Review와 동일: 3단계를 균등하게 나눔
+      const slideIndex = Math.min(Math.floor(scrollProgress * 3), 2);
+      updateCommunitySlide(slideIndex);
     }
 
     function handleScroll() {
       handleLectureScroll();
       handleTimetableScroll();
+      handleCommunityScroll();
     }
 
     window.addEventListener('scroll', handleScroll);

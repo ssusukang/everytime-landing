@@ -18,6 +18,8 @@ body {
 :root {
   --gray-800: #292929;
   --gray-700: #444444;
+  --gray-600: #757575;
+  --gray-400: #d6d6d6;
   --gray-100: #f9f9f9;
   --orange-700: #ff8f0b;
   --white: #ffffff;
@@ -47,6 +49,8 @@ body {
   width: 218px;
   height: 32px;
   flex-shrink: 0;
+  display: block;
+  text-decoration: none;
 }
 
 .logo img {
@@ -92,10 +96,43 @@ body {
   padding: 8px 0;
   height: 40px;
   white-space: nowrap;
+  position: relative;
 }
 
 .country-selector:hover {
   opacity: 0.7;
+}
+
+.country-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.10);
+  padding: 12px 0;
+  min-width: 200px;
+  display: none;
+  z-index: 1001;
+}
+
+.country-dropdown.active {
+  display: block;
+}
+
+.country-option {
+  padding: 12px 24px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  color: var(--gray-800);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.country-option:hover {
+  background-color: var(--gray-100);
 }
 
 /* ==================== */
@@ -160,7 +197,7 @@ body {
 .btn-download {
   display: block;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .btn-download img {
@@ -170,7 +207,8 @@ body {
 }
 
 .btn-download:hover {
-  opacity: 0.9;
+  transform: translateY(-4px);
+  opacity: 0.85;
 }
 
 /* ==================== */
@@ -299,10 +337,10 @@ body {
 
 /* Lecture Text Sticky */
 .lecture-text-sticky {
+  position: absolute;
+  left: 743px;
+  top: 200px;
   width: 500px;
-  margin-left: auto;
-  margin-right: 140px;
-  margin-top: 196px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -376,7 +414,6 @@ body {
   max-width: 1340px;
   height: 1000px;
   margin: 0 auto;
-  position: relative;
 }
 
 /* Phone Mockup - Right Side */
@@ -414,7 +451,7 @@ body {
 .timetable-text-sticky {
   position: absolute;
   left: 140px;
-  top: calc(50% - 116px);
+  top: 200px;
   width: 521px;
   display: flex;
   flex-direction: column;
@@ -453,4 +490,314 @@ body {
   opacity: 1;
   position: relative;
   transform: translateY(0);
+}
+
+/* ==================== */
+/* Community Sticky     */
+/* ==================== */
+.community-sticky {
+  width: 100%;
+  min-height: 300vh;
+  background-color: #f9f9f9;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.community-sticky-container {
+  position: relative;
+  height: 300vh;
+}
+
+.community-sticky-content {
+  position: sticky;
+  top: calc(50vh - 500px + 62px);
+  width: min(1340px, calc(100% - 80px));
+  max-width: 1340px;
+  height: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Phone Mockup - Left Side (Course Review와 동일) */
+.community-sticky-content .phone-mockup-sticky {
+  position: relative;
+  width: 400px;
+  height: auto;
+  margin-left: 140px;
+  margin-top: 93px;
+}
+
+.community-screen-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  filter: drop-shadow(-5.766px 15.649px 16.061px rgba(88, 89, 92, 0.3));
+}
+
+.community-screen-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.community-screen-slide:not(.active) {
+  pointer-events: none;
+}
+
+/* Community Text - Right Side */
+.community-text-sticky {
+  position: absolute;
+  left: 743px;
+  top: 200px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.community-text-sticky .section-label {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #0397ea;
+}
+
+.community-descriptions {
+  position: relative;
+  min-height: 120px;
+}
+
+.community-description-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #292929;
+}
+
+.community-description-slide.active {
+  opacity: 1;
+  position: relative;
+  transform: translateY(0);
+}
+
+/* ==================== */
+/* University Section   */
+/* ==================== */
+.university-section {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 160px 0;
+  overflow: hidden;
+}
+
+.university-container {
+  width: 100%;
+}
+
+/* Text Area */
+.university-text {
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 0 40px;
+}
+
+.university-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.university-description {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Logo Marquee */
+.university-logos-wrapper {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.university-logos {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.university-logo {
+  height: 160px;
+  width: 160px;
+  object-fit: contain;
+  flex-shrink: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-160px * 21 - 60px * 21), 0, 0);
+  }
+}
+
+/* ==================== */
+/* Download Section     */
+/* ==================== */
+.download-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.app-logo-container {
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.download-wordmark {
+  width: 315px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.download-title {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #292929;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: -16px;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.download-buttons .btn-download {
+  display: block;
+  width: 158px;
+  height: 58px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.download-buttons .btn-download:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}
+
+.download-buttons .btn-download img {
+  width: 158px;
+  height: 58px;
+  display: block;
+}
+
+/* ==================== */
+/* Footer Section       */
+/* ==================== */
+.footer-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 56px 240px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 82px;
+  height: 23px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.footer-copyright {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #737373;
+  white-space: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-link {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #444444;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #888888;
 }
