@@ -225,10 +225,10 @@
       <h2 class="download-title">Mọi khoảnh khắc cùng sinh viên</h2>
       <div class="download-buttons">
         <a href="https://apps.apple.com/vn/app/everytime/id642416310" target="_blank" class="btn-download">
-          <img src="asset/App Store.png" alt="Download on App Store">
+          <img src="asset/App%20Store.png" alt="Download on App Store">
         </a>
         <a href="https://play.google.com/store/apps/details?id=com.everytime.v2" target="_blank" class="btn-download">
-          <img src="asset/Google Play.png" alt="Get it on Google Play">
+          <img src="asset/Google%20Play.png" alt="Get it on Google Play">
         </a>
       </div>
     </div>
@@ -250,6 +250,35 @@
   </footer>
 
   <script>
+    // 이미지 보호: 우클릭 및 드래그 방지
+    document.addEventListener('DOMContentLoaded', function() {
+      // 모든 이미지에 우클릭 방지 적용
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.addEventListener('contextmenu', e => e.preventDefault());
+        img.addEventListener('dragstart', e => e.preventDefault());
+      });
+    });
+
+    // Scroll to top on page load/refresh
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // Intro Animation
+    window.addEventListener('load', function() {
+      const introTitle = document.querySelector('.intro-text h1');
+      const introDescription = document.querySelector('.intro-description');
+      const downloadButtons = document.querySelector('.download-buttons');
+
+      setTimeout(() => {
+        if (introTitle) introTitle.classList.add('animate');
+        if (introDescription) introDescription.classList.add('animate');
+        if (downloadButtons) downloadButtons.classList.add('animate');
+      }, 100);
+    });
+
     // Country Selector Dropdown
     const countrySelector = document.getElementById('countrySelector');
     const countryDropdown = document.getElementById('countryDropdown');
