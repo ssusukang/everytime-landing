@@ -945,7 +945,7 @@ body {
     justify-content: flex-start;
     height: auto;
     padding-top: 158px; /* GNB 62px + 96px */
-    padding-bottom: 0;
+    padding-bottom: 96px; /* 카드 하단 여백 96px */
     overflow-x: hidden;
   }
 
@@ -959,7 +959,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 96px; /* 버튼 아래에서 카드까지 */
+    gap: 96px; /* 버튼과 카드 사이 간격 96px */
   }
 
   .intro-left {
