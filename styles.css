@@ -1026,18 +1026,3 @@ body {
     overflow: hidden;
   }
 }
-
-/* ==================== */
-/* 모바일 390px 이하     */
-/* ==================== */
-@media (max-width: 390px) {
-  /* 버튼 간격 조정 */
-  .intro .download-buttons {
-    gap: 16px; /* 피그마 390px: 174px 총 너비에서 158*2 = 16px gap */
-  }
-
-  .btn-download {
-    width: 158px;
-    height: 58px;
-  }
-}
