@@ -1040,4 +1040,62 @@ body {
   .id-cards-scroll {
     max-width: 100%;
   }
+
+  /* Course Review 섹션 반응형 - 피그마 수치 */
+  .lecture-review-sticky {
+    min-height: auto;
+    padding: 64px 24px; /* 피그마: 상단 64px, 좌우 24px */
+  }
+
+  .lecture-sticky-container {
+    height: auto;
+  }
+
+  .lecture-sticky-content {
+    position: static;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px; /* 설명과 폰 목업 사이 간격 */
+    margin-bottom: 96px; /* 1단계와 2단계 사이 간격 */
+  }
+
+  .lecture-sticky-content:last-child {
+    margin-bottom: 0;
+  }
+
+  .phone-mockup-sticky {
+    width: 320px; /* 피그마: 320px */
+    height: 651px; /* 피그마: 651px */
+    position: static;
+  }
+
+  .lecture-text-sticky {
+    max-width: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* 라벨과 설명 사이 간격 */
+    align-items: center;
+  }
+
+  .section-label {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .lecture-descriptions {
+    position: static;
+  }
+
+  .description-slide {
+    position: static;
+    opacity: 1;
+  }
+
+  .scroll-spacer {
+    display: none;
+  }
 }
