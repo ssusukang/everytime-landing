@@ -197,7 +197,7 @@ body {
   position: absolute;
   left: 24px;
   top: 200px;
-  width: 600px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -215,7 +215,7 @@ body {
   font-weight: 700;
   line-height: 1.4;
   color: var(--gray-800);
-  width: 540px;
+  max-width: 540px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
