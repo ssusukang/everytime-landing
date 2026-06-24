@@ -955,13 +955,12 @@ body {
   }
 
   .intro-left {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
+    position: relative;
+    left: auto;
+    top: auto;
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
     text-align: center;
+    margin: 0 auto;
     align-items: center;
     gap: 32px;
   }
