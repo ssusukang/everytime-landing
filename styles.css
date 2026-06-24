@@ -333,7 +333,8 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    /* 이미지 1개(892px) + gap(24px) = 916px 이동 */
+    transform: translateX(-916px);
   }
 }
 
