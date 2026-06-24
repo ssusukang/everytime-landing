@@ -937,21 +937,17 @@ body {
     display: block;
   }
 
-  /* Intro 섹션 반응형 - 피그마 구조 기준 */
+  /* Intro 섹션 반응형 */
   .intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: auto;
     padding-top: 158px;
-    padding-bottom: 96px;
+    padding-bottom: 0;
   }
 
   .intro-inner {
     position: static;
-    width: auto;
-    max-width: 600px;
+    width: 100%;
+    max-width: none;
     height: auto;
     padding: 0 24px;
     display: flex;
@@ -962,8 +958,8 @@ body {
 
   .intro-left {
     position: static;
-    left: 0;
-    top: 0;
+    left: auto;
+    top: auto;
     width: 100%;
     max-width: none;
     padding: 0;
@@ -1011,7 +1007,7 @@ body {
     width: 100%;
     height: 320px;
     overflow: hidden;
-    margin-top: 96px;
+    margin-top: 0;
   }
 
   .cards-wrapper-pc {
