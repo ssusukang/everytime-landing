@@ -72,6 +72,30 @@ body {
   display: block;
 }
 
+.logo-full {
+  display: block;
+}
+
+.logo-icon {
+  display: none;
+}
+
+.mobile-menu-button {
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-button img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -842,4 +866,38 @@ body {
 
 .footer-link:hover {
   color: #888888;
+}
+
+/* ==================== */
+/* 반응형 디자인         */
+/* 1399px 이하          */
+/* ==================== */
+@media (max-width: 1399px) {
+  /* GNB 반응형 */
+  .gnb {
+    padding: 11px 24px 11px 32px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-full {
+    display: none;
+  }
+
+  .logo-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
 }
