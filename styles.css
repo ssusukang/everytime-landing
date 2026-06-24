@@ -642,22 +642,7 @@ body {
 /* 1399px 이하          */
 /* ==================== */
 @media (max-width: 1399px) {
-  body {
-    max-width: 1399px;
-    min-width: 1280px;
-  }
-
-  /* GNB 반응형 */
-  .gnb {
-    max-width: 1399px;
-    padding: 11px 24px 11px 32px;
-  }
-
-  .logo {
-    width: 32px;
-    height: 32px;
-  }
-
+  /* GNB 로고 및 메뉴 전환 */
   .logo-full {
     display: none;
   }
@@ -676,152 +661,12 @@ body {
     display: block;
   }
 
-  /* Intro 섹션 반응형 */
-  .intro {
-    padding-top: 158px;
-    padding-bottom: 96px;
-  }
-
-  .intro-inner {
-    max-width: 1399px;
-    padding: 0 24px;
-    flex-direction: column;
-    align-items: center;
-    gap: 96px;
-  }
-
-  .intro-left {
-    max-width: 100%;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .intro-text h1 {
-    font-size: 32px;
-    margin-bottom: 16px;
-  }
-
-  .intro-description {
-    font-size: 18px;
-  }
-
-  .download-buttons {
-    justify-content: center;
-  }
-
-  .intro-right {
-    max-width: 100%;
-    width: 100%;
-    height: 320px;
-  }
-
-  .cards-wrapper {
-    gap: 24px;
-  }
-
+  /* ID 카드 이미지 전환 */
   .cards-wrapper-pc {
     display: none;
   }
 
   .cards-wrapper-mobile {
     display: flex;
-  }
-
-  /* Sticky 섹션 반응형 */
-  .lecture-sticky-content,
-  .timetable-sticky-content,
-  .community-sticky-content {
-    max-width: 1399px;
-    padding: 64px 24px;
-    flex-direction: column;
-    gap: 64px;
-  }
-
-  .phone-mockup-sticky {
-    width: 320px;
-    height: 580px;
-  }
-
-  .lecture-text-sticky,
-  .timetable-text-sticky,
-  .community-text-sticky {
-    max-width: 100%;
-    width: 100%;
-    text-align: center;
-  }
-
-  .section-label {
-    font-size: 18px;
-  }
-
-  .section-title {
-    font-size: 32px;
-  }
-
-  /* Course Review 반응형 */
-  .lecture-review-sticky .lecture-text-sticky .section-title {
-    font-size: 32px;
-  }
-
-  /* Timetable 반응형 */
-  .timetable-sticky .timetable-text-sticky .section-title {
-    font-size: 32px;
-  }
-
-  /* Community 반응형 */
-  .community-sticky .community-text-sticky .section-title {
-    font-size: 32px;
-  }
-
-  /* University 섹션 반응형 */
-  .university-section {
-    padding: 96px 0;
-  }
-
-  .university-container {
-    max-width: 1399px;
-    padding: 0 24px;
-  }
-
-  .university-text {
-    margin-bottom: 120px;
-  }
-
-  .university-title {
-    font-size: 32px;
-  }
-
-  .university-description {
-    font-size: 16px;
-  }
-
-  /* Download 섹션 반응형 */
-  .download-section {
-    padding: 64px 0;
-  }
-
-  .download-container {
-    max-width: 1399px;
-    padding: 0 24px;
-  }
-
-  .download-title {
-    font-size: 20px;
-  }
-
-  /* Footer 반응형 */
-  .footer-container {
-    max-width: 1399px;
-    padding: 0 24px;
-  }
-
-  .footer-left {
-    padding-left: 16px;
-  }
-
-  .footer-links {
-    padding-right: 16px;
   }
 }
