@@ -318,7 +318,7 @@ body {
 /* 모바일 가로 스크롤 */
 .id-cards-scroll {
   display: flex;
-  gap: 24px;
+  gap: 0;
   animation: scrollHorizontal 20s linear infinite;
 }
 
@@ -333,8 +333,8 @@ body {
     transform: translateX(0);
   }
   100% {
-    /* 이미지 1개(892px) + gap(24px) = 916px 이동 */
-    transform: translateX(-916px);
+    /* 이미지 1개(892px) 이동 */
+    transform: translateX(-892px);
   }
 }
 
