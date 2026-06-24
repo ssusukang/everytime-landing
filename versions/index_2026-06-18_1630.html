@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <title>EVERYTIME - Every moment of your university life</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- PC GNB -->
+  <header class="gnb">
+    <div class="logo">
+      <img src="asset/type=Full, name=Logo, theme=Lightmode.png" alt="EVERYTIME">
+    </div>
+    <nav class="nav-menu">
+      <a href="#" class="nav-item">Đánh giá môn học</a>
+      <a href="#" class="nav-item">Thời khóa biểu</a>
+      <a href="#" class="nav-item">Cộng đồng</a>
+      <a href="#" class="nav-item">Trường cung cấp</a>
+      <a href="#" class="nav-item">Download</a>
+      <div class="country-selector">
+        <span>🇻🇳 Việt Nam</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="intro-inner">
+      <div class="intro-left">
+        <div class="intro-text">
+          <h1>Every moment of<br>your university life</h1>
+          <p class="intro-description">Connect with students at your school<br>and make campus life more fun and meaningful.</p>
+        </div>
+        <div class="download-buttons">
+          <!-- App Store Button -->
+          <a href="#" class="btn-download">
+            <img src="asset/App Store.png" alt="Download on App Store">
+          </a>
+          <!-- Google Play Button -->
+          <a href="#" class="btn-download">
+            <img src="asset/Google Play.png" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+      <div class="intro-right">
+        <!-- ID Cards -->
+        <div class="cards-wrapper">
+          <!-- ID Card group - 왼쪽, 위로 스크롤 -->
+          <div class="id-cards-column id-cards-left-col">
+            <img src="asset/ID card group.png" alt="Student ID Cards">
+            <img src="asset/ID card group.png" alt="Student ID Cards" aria-hidden="true">
+            <img src="asset/ID card group.png" alt="Student ID Cards" aria-hidden="true">
+          </div>
+          <!-- ID Card group - 오른쪽, 아래로 스크롤 -->
+          <div class="id-cards-column id-cards-right-col">
+            <img src="asset/ID card group.png" alt="Student ID Cards">
+            <img src="asset/ID card group.png" alt="Student ID Cards" aria-hidden="true">
+            <img src="asset/ID card group.png" alt="Student ID Cards" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Review Sticky Scroll Section -->
+  <section class="lecture-review-sticky">
+    <div class="lecture-sticky-container">
+      <!-- Sticky Frame -->
+      <div class="lecture-sticky-content">
+        <div class="phone-mockup-sticky">
+          <!-- Phone Screens -->
+          <img src="asset/강의평 1.png" alt="Course Review Screen" class="phone-screen-slide active" data-slide="0">
+          <img src="asset/강의평 2.png" alt="Write Review Screen" class="phone-screen-slide" data-slide="1">
+        </div>
+        <div class="lecture-text-sticky">
+          <h2 class="section-label">Course Review</h2>
+          <div class="lecture-descriptions">
+            <p class="section-title description-slide active" data-slide="0">Read honest reviews from students who actually took the course.</p>
+            <p class="section-title description-slide" data-slide="1">Your course review can help someone next semester.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Spacers -->
+      <div class="scroll-spacer" data-slide="0"></div>
+      <div class="scroll-spacer" data-slide="1"></div>
+    </div>
+  </section>
+
+  <!-- Timetable Sticky Scroll Section -->
+  <section class="timetable-sticky">
+    <div class="timetable-sticky-container">
+      <!-- Sticky Frame -->
+      <div class="timetable-sticky-content">
+        <div class="phone-mockup-sticky">
+          <!-- Phone Screens -->
+          <img src="asset/시간표 1.png" alt="Timetable Search Screen" class="timetable-screen-slide active" data-slide="0">
+          <img src="asset/시간표2.png" alt="Timetable Detail Screen" class="timetable-screen-slide" data-slide="1">
+          <img src="asset/시간표3.png" alt="Timetable Calendar Screen" class="timetable-screen-slide" data-slide="2">
+        </div>
+        <div class="timetable-text-sticky">
+          <h2 class="section-label">Timetable</h2>
+          <div class="timetable-descriptions">
+            <p class="section-title timetable-description-slide active" data-slide="0">Complete your timetable in just a few taps! Search, add, and arrange courses — and your timetable comes together.</p>
+            <p class="section-title timetable-description-slide" data-slide="2">Your schedule at a glance! Manage your classes and personal plans in one calendar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Spacers -->
+      <div class="scroll-spacer" data-slide="0"></div>
+      <div class="scroll-spacer" data-slide="1"></div>
+      <div class="scroll-spacer" data-slide="2"></div>
+    </div>
+  </section>
+
+  <script>
+    // Sticky Scroll Interaction - Course Review
+    const lectureSection = document.querySelector('.lecture-review-sticky');
+    const lectureSlides = lectureSection.querySelectorAll('.phone-screen-slide');
+    const lectureDescriptions = lectureSection.querySelectorAll('.description-slide');
+
+    let lectureCurrent = 0;
+
+    function updateLectureSlide(index) {
+      if (lectureCurrent === index) return;
+
+      lectureSlides[lectureCurrent].classList.remove('active');
+      lectureDescriptions[lectureCurrent].classList.remove('active');
+
+      lectureSlides[index].classList.add('active');
+      lectureDescriptions[index].classList.add('active');
+
+      lectureCurrent = index;
+    }
+
+    function handleLectureScroll() {
+      const rect = lectureSection.getBoundingClientRect();
+      const sectionHeight = lectureSection.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      const scrollProgress = -rect.top / (sectionHeight - windowHeight);
+
+      if (scrollProgress < 0 || scrollProgress > 1) return;
+
+      const slideIndex = Math.min(Math.floor(scrollProgress * 2), 1);
+      updateLectureSlide(slideIndex);
+    }
+
+    // Sticky Scroll Interaction - Timetable
+    const timetableSection = document.querySelector('.timetable-sticky');
+    const timetableSlides = timetableSection.querySelectorAll('.timetable-screen-slide');
+    const timetableDescriptions = timetableSection.querySelectorAll('.timetable-description-slide');
+
+    let timetableCurrent = 0;
+
+    function updateTimetableSlide(index) {
+      if (timetableCurrent === index) return;
+
+      // 목업 이미지는 항상 업데이트
+      timetableSlides[timetableCurrent].classList.remove('active');
+      timetableSlides[index].classList.add('active');
+
+      // 텍스트 업데이트
+      // 0번 슬라이드(1, 2단계 공통 텍스트), 1번 슬라이드(3단계 텍스트)
+      if (index === 2) {
+        // 3단계: 첫 번째 텍스트 숨기고 두 번째 텍스트 표시
+        timetableDescriptions[0].classList.remove('active');
+        timetableDescriptions[1].classList.add('active');
+      } else {
+        // 1, 2단계: 첫 번째 텍스트 표시하고 두 번째 텍스트 숨김
+        timetableDescriptions[0].classList.add('active');
+        timetableDescriptions[1].classList.remove('active');
+      }
+
+      timetableCurrent = index;
+    }
+
+    function handleTimetableScroll() {
+      const rect = timetableSection.getBoundingClientRect();
+      const sectionHeight = timetableSection.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      const scrollProgress = -rect.top / (sectionHeight - windowHeight);
+
+      if (scrollProgress < 0 || scrollProgress > 1) return;
+
+      // 1→2 전환: 빠르게 (0~0.35)
+      // 2→3 전환: 느리게 (0.35~1)
+      let slideIndex;
+      if (scrollProgress < 0.35) {
+        slideIndex = 0;
+      } else if (scrollProgress < 0.65) {
+        slideIndex = 1;
+      } else {
+        slideIndex = 2;
+      }
+      updateTimetableSlide(slideIndex);
+    }
+
+    function handleScroll() {
+      handleLectureScroll();
+      handleTimetableScroll();
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+  </script>
+</body>
+</html>
