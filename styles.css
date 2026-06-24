@@ -66,16 +66,14 @@ body {
   text-decoration: none;
 }
 
-.logo img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
+/* 1400px 이상: 워드타입 로고만 표시 */
 .logo-full {
   display: block;
+  width: 218px;
+  height: 32px;
 }
 
+/* 1400px 이상: 앱 아이콘 로고 숨기기 */
 .logo-icon {
   display: none;
 }
@@ -883,10 +881,12 @@ body {
     height: 32px;
   }
 
+  /* 1399px 이하: 워드타입 로고 숨기기 */
   .logo-full {
     display: none;
   }
 
+  /* 1399px 이하: 앱 아이콘 로고만 표시 */
   .logo-icon {
     display: block;
     width: 32px;
