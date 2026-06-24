@@ -1003,8 +1003,9 @@ body {
 
   .intro .download-buttons {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 16px;
     width: 100%;
   }
 
