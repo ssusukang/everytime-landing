@@ -937,10 +937,10 @@ body {
     display: block;
   }
 
-  /* Intro 섹션 반응형 */
+  /* Intro 섹션 반응형 - 피그마 정확한 수치 */
   .intro {
     height: auto;
-    padding-top: 158px;
+    padding-top: 158px; /* GNB 62px + 96px */
     padding-bottom: 0;
   }
 
@@ -949,11 +949,11 @@ body {
     width: 100%;
     max-width: none;
     height: auto;
-    padding: 0 24px;
+    padding: 0 24px; /* 피그마: 좌우 24px */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 96px;
+    gap: 96px; /* 버튼 아래에서 카드까지 */
   }
 
   .intro-left {
@@ -966,30 +966,30 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 32px; /* 설명과 버튼 사이 간격 */
     z-index: auto;
   }
 
   .intro-text {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 16px; /* 타이틀과 설명 사이 간격 */
     width: 100%;
     text-align: center;
   }
 
   .intro-text h1 {
-    font-size: 32px;
-    line-height: 1.4;
+    font-size: 32px; /* 피그마: 32px */
+    line-height: 1.4; /* 피그마: 1.4 */
     width: 100%;
     max-width: none;
     text-align: center;
   }
 
   .intro-description {
-    font-size: 18px;
+    font-size: 18px; /* 피그마: 18px */
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.6; /* 피그마: 1.6 */
     color: var(--gray-700);
     text-align: center;
     width: 100%;
@@ -1002,10 +1002,15 @@ body {
     width: 100%;
   }
 
+  .btn-download {
+    width: 158px; /* 피그마: 158px */
+    height: 58px; /* 피그마: 58px */
+  }
+
   .intro-right {
     position: static;
     width: 100%;
-    height: 320px;
+    height: 320px; /* 피그마: 320px */
     overflow: hidden;
     margin-top: 0;
   }
