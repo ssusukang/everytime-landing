@@ -289,6 +289,14 @@ body {
   height: 100%;
 }
 
+.cards-wrapper-pc {
+  display: block;
+}
+
+.cards-wrapper-mobile {
+  display: none;
+}
+
 /* ID Card 공통 스타일 */
 .id-cards-column {
   position: absolute;
@@ -305,6 +313,28 @@ body {
 
 .id-cards-column img:not(:first-child) {
   margin-top: -16px;
+}
+
+/* 모바일 가로 스크롤 */
+.id-cards-scroll {
+  display: flex;
+  gap: 24px;
+  animation: scrollHorizontal 20s linear infinite;
+}
+
+.id-cards-scroll img {
+  width: 892px;
+  height: 320px;
+  flex-shrink: 0;
+}
+
+@keyframes scrollHorizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
 }
 
 /* 왼쪽 열 - 위로 스크롤 */
@@ -899,5 +929,70 @@ body {
 
   .mobile-menu-button {
     display: block;
+  }
+
+  /* Intro 섹션 반응형 */
+  .intro {
+    height: auto;
+    padding-top: 158px;
+    padding-bottom: 96px;
+  }
+
+  .intro-inner {
+    width: 100%;
+    max-width: 1399px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 96px;
+  }
+
+  .intro-left {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .intro-text {
+    align-items: center;
+  }
+
+  .intro-text h1 {
+    font-size: 32px;
+    line-height: 1.4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .intro-description {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .intro .download-buttons {
+    justify-content: center;
+  }
+
+  .intro-right {
+    position: static;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .cards-wrapper-pc {
+    display: none;
+  }
+
+  .cards-wrapper-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }
