@@ -289,14 +289,14 @@ body {
 .id-cards-left-col {
   left: 10px;
   top: 0;
-  animation: scrollUp 60s linear infinite;
+  animation: scrollUp 40s linear infinite;
 }
 
 /* 오른쪽 열 - 아래로 스크롤 (초록색 카드부터 시작, Figma: y=-1128px) */
 .id-cards-right-col {
   right: 10px;
   top: -1128px;
-  animation: scrollDown 60s linear infinite;
+  animation: scrollDown 40s linear infinite;
 }
 
 /* 애니메이션 정의 */
