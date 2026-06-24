@@ -940,8 +940,9 @@ body {
   /* Intro 섹션 반응형 - 피그마 구조 기준 */
   .intro {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: auto;
     padding-top: 158px;
     padding-bottom: 96px;
@@ -949,8 +950,8 @@ body {
 
   .intro-inner {
     position: static;
-    width: 100%;
-    max-width: none;
+    width: auto;
+    max-width: 600px;
     height: auto;
     padding: 0 24px;
     display: flex;
