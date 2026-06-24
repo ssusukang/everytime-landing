@@ -937,73 +937,43 @@ body {
     display: block;
   }
 
-  /* Intro 섹션 반응형 - 피그마 구조 기준 */
+  /* Intro 섹션 반응형 */
   .intro {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: auto;
-    padding-top: 158px;
-    padding-bottom: 96px;
+    padding-top: 80px;
+    padding-bottom: 0;
+    overflow: hidden;
   }
 
   .intro-inner {
     position: static;
-    width: auto;
-    max-width: 600px;
+    width: 100%;
+    max-width: none;
     height: auto;
     padding: 0 24px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 96px;
+    text-align: center;
+    gap: 40px;
   }
 
   .intro-left {
     position: static;
-    left: 0;
-    top: 0;
+    left: auto;
+    top: auto;
     width: 100%;
     max-width: none;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 32px;
     z-index: auto;
-  }
-
-  .intro-text {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .intro-text h1 {
-    font-size: 32px;
-    line-height: 1.4;
-    width: 100%;
-    max-width: none;
-    text-align: center;
-  }
-
-  .intro-description {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: var(--gray-700);
-    text-align: center;
-    width: 100%;
-  }
-
-  .intro .download-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    width: 100%;
   }
 
   .intro-right {
@@ -1011,7 +981,7 @@ body {
     width: 100%;
     height: 320px;
     overflow: hidden;
-    margin-top: 96px;
+    margin-top: 0;
   }
 
   .cards-wrapper-pc {
