@@ -326,7 +326,7 @@ body {
   width: 892px;
   height: 320px;
   flex-shrink: 0;
-  margin-left: -8px;
+  margin-left: -12px;
 }
 
 .id-cards-scroll img:first-child {
@@ -338,8 +338,8 @@ body {
     transform: translateX(0);
   }
   100% {
-    /* 이미지 1개(892px) - 간격(8px) = 884px 이동 */
-    transform: translateX(-884px);
+    /* 이미지 1개(892px) - 간격(12px) = 880px 이동 */
+    transform: translateX(-880px);
   }
 }
 
