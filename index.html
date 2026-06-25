@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVERYTIME - Every moment of your university life</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,10 +38,46 @@
         </div>
       </div>
     </nav>
-    <button class="mobile-menu-button" aria-label="메뉴">
+    <button class="mobile-menu-button" id="mobileMenuButton" aria-label="메뉴">
       <img src="asset/1399px 미만/resizer.png" alt="Menu">
     </button>
   </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-header">
+      <img src="asset/1399px 미만/Img_Logo.png" alt="EVERYTIME" class="mobile-menu-logo">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="닫기">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M24 8L8 24M8 8L24 24" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="#course-review" class="mobile-menu-item" data-vn="Đánh giá môn học" data-en="Course Review">Đánh giá môn học</a>
+      <a href="#timetable" class="mobile-menu-item" data-vn="Thời khóa biểu" data-en="Timetable">Thời khóa biểu</a>
+      <a href="#community" class="mobile-menu-item" data-vn="Cộng đồng" data-en="Community">Cộng đồng</a>
+      <a href="#university" class="mobile-menu-item mobile-menu-item-university" data-vn="Trường cung cấp" data-en="University supported">Trường cung cấp</a>
+      <a href="#download" class="mobile-menu-item" data-vn="Download" data-en="Download">Download</a>
+      <div class="mobile-country-selector" id="mobileCountrySelector">
+        <div class="mobile-country-button" id="mobileCountryButton">
+          <span id="mobileSelectedCountry">🇻🇳 Việt Nam</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 9L12 15L18 9" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="mobile-country-dropdown" id="mobileCountryDropdown">
+          <div class="mobile-country-option" data-country="🇻🇳 Việt Nam">🇻🇳 Việt Nam</div>
+          <div class="mobile-country-option" data-country="🇯🇵 日本">🇯🇵 日本</div>
+          <div class="mobile-country-option" data-country="🇹🇼 台灣">🇹🇼 台灣</div>
+          <div class="mobile-country-option" data-country="🇮🇩 Indonesia">🇮🇩 Indonesia</div>
+          <div class="mobile-country-option" data-country="🇵🇭 Philippines">🇵🇭 Philippines</div>
+          <div class="mobile-country-option" data-country="🇸🇬 Singapore">🇸🇬 Singapore</div>
+          <div class="mobile-country-option" data-country="Regions" data-display="🌎 Other regions">🌎 Other regions</div>
+        </div>
+      </div>
+    </nav>
+  </div>
 
   <!-- Intro Section -->
   <section class="intro">
@@ -113,6 +149,30 @@
       <div class="scroll-spacer" data-slide="0"></div>
       <div class="scroll-spacer" data-slide="1"></div>
     </div>
+
+    <!-- Mobile Layout (1399px 미만) -->
+    <div class="lecture-mobile-layout">
+      <!-- Block 1: Course Review + Description + Phone -->
+      <div class="lecture-mobile-block">
+        <div class="lecture-mobile-text">
+          <h2 class="lecture-mobile-label">Course Review</h2>
+          <p class="lecture-mobile-description">Read honest reviews from students who actually took the course.</p>
+        </div>
+        <div class="lecture-mobile-phone">
+          <img src="asset/강의평 1.png" alt="Course Review Screen">
+        </div>
+      </div>
+
+      <!-- Block 2: Description + Phone -->
+      <div class="lecture-mobile-block">
+        <div class="lecture-mobile-text">
+          <p class="lecture-mobile-description">Your course review can help someone next semester.</p>
+        </div>
+        <div class="lecture-mobile-phone">
+          <img src="asset/강의평 2.png" alt="Write Review Screen">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Timetable Sticky Scroll Section -->
@@ -139,6 +199,35 @@
       <div class="scroll-spacer" data-slide="0"></div>
       <div class="scroll-spacer" data-slide="1"></div>
       <div class="scroll-spacer" data-slide="2"></div>
+    </div>
+
+    <!-- Mobile Layout (1399px 미만) -->
+    <div class="timetable-mobile-layout">
+      <!-- Block 1: Timetable 1 & 2 -->
+      <div class="timetable-mobile-block">
+        <div class="timetable-mobile-text">
+          <h2 class="timetable-mobile-label">Timetable</h2>
+          <p class="timetable-mobile-description">Complete your timetable in just a few taps! Search, add, and arrange courses — and your timetable comes together.</p>
+        </div>
+        <div class="timetable-mobile-phones">
+          <div class="timetable-mobile-phone">
+            <img src="asset/시간표 1.png" alt="Timetable Search Screen">
+          </div>
+          <div class="timetable-mobile-phone">
+            <img src="asset/시간표2.png" alt="Timetable Detail Screen">
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2: Timetable 3 -->
+      <div class="timetable-mobile-block">
+        <div class="timetable-mobile-text">
+          <p class="timetable-mobile-description">Your schedule at a glance! Manage your classes and personal plans in one calendar.</p>
+        </div>
+        <div class="timetable-mobile-phone">
+          <img src="asset/시간표3.png" alt="Timetable Calendar Screen">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -167,6 +256,40 @@
       <div class="scroll-spacer" data-slide="0"></div>
       <div class="scroll-spacer" data-slide="1"></div>
       <div class="scroll-spacer" data-slide="2"></div>
+    </div>
+
+    <!-- Mobile Layout (1399px 미만) -->
+    <div class="community-mobile-layout">
+      <!-- Block 1: Community 1 -->
+      <div class="community-mobile-block">
+        <div class="community-mobile-text">
+          <h2 class="community-mobile-label">Community</h2>
+          <p class="community-mobile-description">Assignments, class talk, campus life — share it all with real students at your school.</p>
+        </div>
+        <div class="community-mobile-phone">
+          <img src="asset/커뮤니티1.png" alt="Community Board Screen">
+        </div>
+      </div>
+
+      <!-- Block 2: Community 4 -->
+      <div class="community-mobile-block">
+        <div class="community-mobile-text">
+          <p class="community-mobile-description">Only verified current students at your school can join.</p>
+        </div>
+        <div class="community-mobile-phone">
+          <img src="asset/커뮤니티2.png" alt="School Verification Screen">
+        </div>
+      </div>
+
+      <!-- Block 3: Community 5 -->
+      <div class="community-mobile-block">
+        <div class="community-mobile-text">
+          <p class="community-mobile-description">Send notifications directly to students taking the same course.</p>
+        </div>
+        <div class="community-mobile-phone">
+          <img src="asset/커뮤니티3.png" alt="Notification Screen">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -301,14 +424,31 @@
     function applyCountrySettings(country) {
       const isVietnam = country === '🇻🇳 Việt Nam';
       const navItems = document.querySelectorAll('.nav-item');
+      const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
       const universitySection = document.getElementById('university');
       const universityNavItem = document.querySelector('.nav-item-university');
+      const mobileUniversityNavItem = document.querySelector('.mobile-menu-item-university');
+      const mobileSelectedCountry = document.getElementById('mobileSelectedCountry');
 
-      // Update selected country display
+      // Update selected country display (PC)
       selectedCountry.textContent = country;
 
-      // Update menu language
+      // Update selected country display (Mobile)
+      if (mobileSelectedCountry) {
+        mobileSelectedCountry.textContent = country;
+      }
+
+      // Update menu language (PC)
       navItems.forEach(item => {
+        if (isVietnam) {
+          item.textContent = item.getAttribute('data-vn');
+        } else {
+          item.textContent = item.getAttribute('data-en');
+        }
+      });
+
+      // Update menu language (Mobile)
+      mobileMenuItems.forEach(item => {
         if (isVietnam) {
           item.textContent = item.getAttribute('data-vn');
         } else {
@@ -322,6 +462,9 @@
       }
       if (universityNavItem) {
         universityNavItem.style.display = isVietnam ? 'flex' : 'none';
+      }
+      if (mobileUniversityNavItem) {
+        mobileUniversityNavItem.style.display = isVietnam ? 'block' : 'none';
       }
     }
 
@@ -499,6 +642,192 @@
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
+
+    // 모바일 스크롤 등장 애니메이션 (1399px 이하에서만)
+    function initMobileScrollAnimations() {
+      // 미디어 쿼리로 1399px 이하인지 체크
+      const mobileMediaQuery = window.matchMedia('(max-width: 1399px)');
+
+      function handleMobileAnimations(e) {
+        if (!e.matches) {
+          // 1400px 이상이면 observer 비활성화하고 모든 animate-in 클래스 제거
+          if (window.mobileScrollObserver) {
+            window.mobileScrollObserver.disconnect();
+            window.mobileScrollObserver = null;
+          }
+          // 모든 애니메이션 클래스 제거하여 초기 상태로
+          document.querySelectorAll('.animate-in').forEach(el => {
+            el.classList.remove('animate-in');
+          });
+          return;
+        }
+
+        // 1399px 이하일 때만 observer 활성화
+        if (window.mobileScrollObserver) return; // 이미 활성화된 경우
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -100px 0px', // 뷰포트 하단에서 100px 전에 트리거
+          threshold: 0.1
+        };
+
+        window.mobileScrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animate-in')) {
+              entry.target.classList.add('animate-in');
+            }
+          });
+        }, observerOptions);
+
+        // Course Review 모바일 요소
+        const lectureTexts = document.querySelectorAll('.lecture-mobile-text');
+        const lecturePhones = document.querySelectorAll('.lecture-mobile-phone');
+
+        // Timetable 모바일 요소
+        const timetableTexts = document.querySelectorAll('.timetable-mobile-text');
+        const timetablePhones = document.querySelectorAll('.timetable-mobile-phone');
+        const timetablePhonesGroups = document.querySelectorAll('.timetable-mobile-phones');
+
+        // Community 모바일 요소
+        const communityTexts = document.querySelectorAll('.community-mobile-text');
+        const communityPhones = document.querySelectorAll('.community-mobile-phone');
+
+        // 모든 요소를 observe
+        [...lectureTexts, ...lecturePhones, ...timetableTexts, ...timetablePhones,
+         ...timetablePhonesGroups, ...communityTexts, ...communityPhones].forEach(el => {
+          window.mobileScrollObserver.observe(el);
+        });
+      }
+
+      // 초기 실행
+      handleMobileAnimations(mobileMediaQuery);
+
+      // 화면 크기 변경 감지
+      mobileMediaQuery.addListener(handleMobileAnimations);
+    }
+
+    // DOM 로드 후 초기화
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileScrollAnimations);
+    } else {
+      initMobileScrollAnimations();
+    }
+
+    // Download 섹션 스크롤 애니메이션 (1400px 이상, 1399px 이하 모두 적용)
+    function initDownloadScrollAnimation() {
+      const downloadObserverOptions = {
+        root: null,
+        threshold: 0.2,
+        rootMargin: '0px'
+      };
+
+      const downloadObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            downloadObserver.unobserve(entry.target); // 1회만 실행
+          }
+        });
+      }, downloadObserverOptions);
+
+      // Download 섹션 컨테이너
+      const downloadContainer = document.querySelector('.download-container');
+
+      // 컨테이너 observe
+      if (downloadContainer) {
+        downloadObserver.observe(downloadContainer);
+      }
+    }
+
+    // Download 애니메이션 초기화
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDownloadScrollAnimation);
+    } else {
+      initDownloadScrollAnimation();
+    }
+
+    // 모바일 메뉴 토글
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+    const mobileCountryButton = document.getElementById('mobileCountryButton');
+    const mobileCountryDropdown = document.getElementById('mobileCountryDropdown');
+    const mobileCountryOptions = document.querySelectorAll('.mobile-country-option');
+
+    // 메뉴 열기
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // 스크롤 방지
+      });
+    }
+
+    // 메뉴 닫기
+    function closeMobileMenu() {
+      mobileMenuOverlay.classList.remove('active');
+      mobileCountryDropdown.classList.remove('active');
+      mobileCountryButton.classList.remove('active'); // 화살표도 원래대로
+      document.body.style.overflow = ''; // 스크롤 복원
+    }
+
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+
+    // 메뉴 항목 클릭 시 smooth 스크롤 후 메뉴 닫기
+    mobileMenuItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = item.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          closeMobileMenu();
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 300);
+        }
+      });
+    });
+
+    // 모바일 국가 선택 토글
+    if (mobileCountryButton) {
+      mobileCountryButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileCountryButton.classList.toggle('active');
+        mobileCountryDropdown.classList.toggle('active');
+
+        // 드롭다운이 열릴 때 마지막 항목이 보이도록 스크롤
+        if (mobileCountryDropdown.classList.contains('active')) {
+          setTimeout(() => {
+            const lastOption = mobileCountryDropdown.lastElementChild;
+            if (lastOption) {
+              lastOption.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          }, 100); // 애니메이션 시작 후 스크롤
+        }
+      });
+    }
+
+    // 모바일 국가 선택
+    mobileCountryOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const country = option.getAttribute('data-country');
+        const display = option.getAttribute('data-display') || option.textContent;
+
+        // localStorage 저장
+        localStorage.setItem('selectedCountry', country);
+
+        // 메뉴 닫기
+        closeMobileMenu();
+
+        // 페이지 새로고침
+        setTimeout(() => {
+          window.location.reload();
+        }, 300);
+      });
+    });
   </script>
 </body>
 </html>

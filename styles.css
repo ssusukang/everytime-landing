@@ -1,4 +1,10 @@
 /* Reset and Base Styles */
+html {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +30,9 @@ body {
   margin: 0 auto;
   background-color: #ffffff;
   color: #292929;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
 }
 
 /* Design Tokens */
@@ -56,6 +64,7 @@ body {
   justify-content: space-between;
   padding: 11px 80px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-sizing: border-box; /* 패딩 포함 높이 계산 */
 }
 
 .logo {
@@ -86,6 +95,7 @@ body {
   border: none;
   background: transparent;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .mobile-menu-button img {
@@ -169,6 +179,151 @@ body {
 
 .country-option:hover {
   background-color: #f9f9f9;
+}
+
+/* ==================== */
+/* Mobile Menu Overlay  */
+/* ==================== */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
+}
+
+.mobile-menu-overlay.active {
+  display: flex;
+}
+
+.mobile-menu-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: space-between;
+  padding: 0 24px 0 32px; /* 좌 32px, 우 24px */
+  height: 62px; /* 고정 높이 */
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.mobile-menu-logo {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 24px;
+}
+
+.mobile-menu-item {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #292929;
+  text-decoration: none;
+  text-align: right;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-item:hover {
+  opacity: 0.7;
+}
+
+.mobile-country-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.mobile-country-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #292929;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.mobile-country-button svg {
+  transition: transform 0.3s ease;
+}
+
+.mobile-country-button.active svg {
+  transform: rotate(180deg);
+}
+
+.mobile-country-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0; /* 초기 상태: 간격 없음 */
+  margin-top: 0; /* 초기 상태: 여백 없음 */
+  padding-bottom: 0; /* 초기 상태: 여백 없음 */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, gap 0.3s ease, margin-top 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.mobile-country-dropdown.active {
+  gap: 24px; /* 펼쳐졌을 때: 메뉴 항목 간격과 동일 */
+  margin-top: 24px; /* 펼쳐졌을 때: 토글과 목록 사이 여백 */
+  padding-bottom: 24px; /* 펼쳐졌을 때: 하단 여백 */
+  max-height: 600px;
+}
+
+.mobile-country-option {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px; /* 메뉴 항목과 동일 */
+  font-weight: 700; /* 메뉴 항목과 동일 */
+  line-height: 34px; /* 메뉴 항목과 동일 */
+  color: #292929; /* 메뉴 항목과 동일 */
+  cursor: pointer;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: right;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-country-option:hover {
+  opacity: 0.7; /* 메뉴 항목과 동일한 호버 효과 */
 }
 
 /* ==================== */
@@ -319,7 +474,7 @@ body {
 .id-cards-scroll {
   display: flex;
   gap: 0;
-  animation: scrollHorizontal 20s linear infinite;
+  animation: scrollHorizontal 12s linear infinite;
 }
 
 .id-cards-scroll img {
@@ -380,6 +535,7 @@ body {
 /* ==================== */
 /* Lecture Review Sticky */
 /* ==================== */
+/* Course Review Sticky Scroll (1400px 이상 기본) */
 .lecture-review-sticky {
   width: 100%;
   min-height: 200vh;
@@ -387,6 +543,11 @@ body {
   position: relative;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+/* PC에서는 모바일 레이아웃 숨김 */
+.lecture-mobile-layout {
+  display: none;
 }
 
 .lecture-sticky-container {
@@ -493,6 +654,7 @@ body {
 /* ==================== */
 /* Timetable Sticky     */
 /* ==================== */
+/* Timetable Sticky Scroll (1400px 이상 기본) */
 .timetable-sticky {
   width: 100%;
   min-height: 300vh;
@@ -500,6 +662,11 @@ body {
   position: relative;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+/* PC에서는 모바일 레이아웃 숨김 */
+.timetable-mobile-layout {
+  display: none;
 }
 
 .timetable-sticky-container {
@@ -595,6 +762,7 @@ body {
 /* ==================== */
 /* Community Sticky     */
 /* ==================== */
+/* Community Sticky Scroll (1400px 이상 기본) */
 .community-sticky {
   width: 100%;
   min-height: 300vh;
@@ -602,6 +770,11 @@ body {
   position: relative;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+/* PC에서는 모바일 레이아웃 숨김 */
+.community-mobile-layout {
+  display: none;
 }
 
 .community-sticky-container {
@@ -730,7 +903,7 @@ body {
 
 /* Logo Marquee */
 .university-logos-wrapper {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -780,6 +953,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.download-container.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .app-logo-container {
@@ -844,7 +1025,7 @@ body {
 .footer-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 56px 240px;
+  padding: 56px 80px;
   display: flex;
   justify-content: center;
 }
@@ -906,15 +1087,28 @@ body {
 /* 반응형 디자인         */
 /* 1399px 이하          */
 /* ==================== */
-@media (max-width: 1399px) {
+@media (max-width: 1399.98px) {
   /* GNB 반응형 */
   .gnb {
-    padding: 11px 24px 11px 32px;
+    height: 62px; /* 고정 높이 */
+    padding: 0 24px 0 32px; /* 좌 32px, 우 24px */
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: space-between;
+    box-sizing: border-box; /* 패딩 포함 높이 계산 */
   }
 
   .logo {
     width: 32px;
     height: 32px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
   }
 
   /* 1399px 이하: 워드타입 로고 숨기기 */
@@ -946,7 +1140,7 @@ body {
     height: auto;
     padding-top: 158px; /* GNB 62px + 96px */
     padding-bottom: 96px; /* 카드 하단 여백 96px */
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   .intro-inner {
@@ -1016,9 +1210,9 @@ body {
 
   .intro-right {
     position: static;
-    width: calc(100% + 48px); /* 부모 패딩 24px * 2 = 48px 상쇄 */
-    margin-left: -24px;
-    margin-right: -24px;
+    width: 100vw; /* 전체 뷰포트 너비 */
+    margin-left: calc(-50vw + 50%); /* 중앙 정렬 */
+    margin-right: calc(-50vw + 50%);
     max-width: 100vw;
     height: 320px; /* 피그마: 320px */
     overflow: hidden;
@@ -1044,58 +1238,389 @@ body {
   /* Course Review 섹션 반응형 - 피그마 수치 */
   .lecture-review-sticky {
     min-height: auto;
-    padding: 64px 24px; /* 피그마: 상단 64px, 좌우 24px */
+    padding: 64px 24px;
   }
 
+  /* PC용 sticky container 숨김 */
   .lecture-sticky-container {
-    height: auto;
-  }
-
-  .lecture-sticky-content {
-    position: static;
-    height: auto;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 66px; /* 설명과 폰 목업 사이 간격 */
-    margin-bottom: 96px; /* 1단계와 2단계 사이 간격 */
-  }
-
-  .lecture-sticky-content:last-child {
-    margin-bottom: 0;
-  }
-
-  .phone-mockup-sticky {
-    width: 320px; /* 피그마: 320px */
-    height: 651px; /* 피그마: 651px */
-    position: static;
-  }
-
-  .lecture-text-sticky {
-    max-width: none;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* 라벨과 설명 사이 간격 */
-    align-items: center;
-  }
-
-  .section-label {
-    font-size: 20px;
-    margin-bottom: 0;
-  }
-
-  .lecture-descriptions {
-    position: static;
-  }
-
-  .description-slide {
-    position: static;
-    opacity: 1;
-  }
-
-  .scroll-spacer {
     display: none;
   }
+
+  /* 모바일 레이아웃 표시 */
+  .lecture-mobile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 96px; /* 블록 간 간격 */
+  }
+
+  .lecture-mobile-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px; /* 텍스트와 폰 사이 간격 */
+  }
+
+  .lecture-mobile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px; /* 라벨과 설명 사이 간격 */
+    width: 100%;
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .lecture-mobile-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lecture-mobile-label {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #ff8f0b;
+    margin: 0;
+  }
+
+  .lecture-mobile-description {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #292929;
+    margin: 0;
+  }
+
+  .lecture-mobile-phone {
+    width: 320px;
+    height: auto;
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  }
+
+  .lecture-mobile-phone.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lecture-mobile-phone img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(-5.77px 15.65px 16.06px rgba(88, 89, 92, 0.3));
+  }
+
+  /* Timetable 모바일 레이아웃 */
+  .timetable-sticky {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  /* PC용 sticky container 숨김 */
+  .timetable-sticky-container {
+    display: none;
+  }
+
+  /* 모바일 레이아웃 표시 */
+  .timetable-mobile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 96px; /* 블록 간 간격 */
+  }
+
+  .timetable-mobile-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px; /* 텍스트와 폰 사이 간격 */
+  }
+
+  .timetable-mobile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px; /* 라벨과 설명 사이 간격 */
+    width: 100%;
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .timetable-mobile-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timetable-mobile-label {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #f91f15; /* 피그마: red700 */
+    margin: 0;
+  }
+
+  .timetable-mobile-description {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #292929;
+    margin: 0;
+  }
+
+  /* 폰 목업 컨테이너 (여러 개일 때) */
+  .timetable-mobile-phones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px; /* 폰 목업 간 간격 */
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  }
+
+  .timetable-mobile-phones.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timetable-mobile-phone {
+    width: 320px;
+    height: auto;
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  }
+
+  .timetable-mobile-phone.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timetable-mobile-phone img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(-5.77px 15.65px 16.06px rgba(88, 89, 92, 0.3));
+  }
+
+  /* Community 모바일 레이아웃 */
+  .community-sticky {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  /* PC용 sticky container 숨김 */
+  .community-sticky-container {
+    display: none;
+  }
+
+  /* 모바일 레이아웃 표시 */
+  .community-mobile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 96px; /* 블록 간 간격 */
+  }
+
+  .community-mobile-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px; /* 텍스트와 폰 사이 간격 */
+  }
+
+  .community-mobile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px; /* 라벨과 설명 사이 간격 */
+    width: 100%;
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .community-mobile-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .community-mobile-label {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #0397ea; /* 피그마: blue700 */
+    margin: 0;
+  }
+
+  .community-mobile-description {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #292929;
+    margin: 0;
+  }
+
+  .community-mobile-phone {
+    width: 320px;
+    height: auto;
+    /* 스크롤 등장 애니메이션 초기 상태 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  }
+
+  .community-mobile-phone.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .community-mobile-phone img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(-5.77px 15.65px 16.06px rgba(88, 89, 92, 0.3));
+  }
+
+  /* University Supported 모바일 레이아웃 */
+  .university-section {
+    padding: 96px 0; /* 피그마: 상단 96px */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .university-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .university-text {
+    margin-bottom: 120px; /* 피그마: 텍스트-로고 간격 120px */
+    padding: 0 24px; /* 피그마: 좌우 24px */
+  }
+
+  .university-title {
+    font-size: 32px; /* 피그마: 32px */
+    line-height: 1.4; /* 피그마: 1.4 */
+    margin-bottom: 32px; /* 피그마: 텍스트 간 간격 32px */
+  }
+
+  .university-description {
+    font-size: 18px; /* 피그마: 18px */
+    line-height: 1.4; /* 피그마: 1.4 */
+    color: #f9f9f9; /* 피그마: gray100 */
+  }
+
+  .university-logos-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .university-logo {
+    height: 120px;
+    width: 120px;
+  }
+
+  /* Download 모바일 레이아웃 */
+  .download-section {
+    padding: 64px 24px; /* 피그마: 상단 64px, 좌우 24px */
+    box-sizing: border-box;
+  }
+
+  .download-container {
+    gap: 24px; /* 피그마: 간격 24px */
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .app-logo-container {
+    width: 120px; /* 피그마: 120px */
+    height: 120px; /* 피그마: 120px */
+  }
+
+  .app-logo {
+    width: 120px; /* 피그마: 120px */
+    height: 120px; /* 피그마: 120px */
+  }
+
+  .download-wordmark {
+    width: 210px; /* 피그마: 210px */
+    height: 40px; /* 피그마: 40px */
+    max-width: 100%; /* 화면 너비 초과 방지 */
+    object-fit: contain; /* 비율 유지 */
+  }
+
+  .download-title {
+    font-size: 24px; /* 피그마: 24px */
+    line-height: 1.4; /* 피그마: 1.4 */
+    margin-top: 0;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    width: 100%; /* 전체 너비 사용 */
+    text-align: center; /* 중앙 정렬 */
+    padding: 0;
+    white-space: normal; /* 줄바꿈 허용 */
+  }
+
+  .download-buttons {
+    flex-wrap: wrap; /* 좁아지면 세로로 쌓임 */
+    justify-content: center;
+    gap: 16px; /* 피그마: 16px */
+    max-width: 100%;
+  }
+
+  /* Footer 모바일 레이아웃 */
+  .footer-section {
+    padding: 56px 40px; /* 피그마: 상단 56px, 좌우 40px */
+  }
+
+  .footer-container {
+    flex-wrap: wrap; /* 좁아지면 세로로 쌓임 */
+    align-items: flex-end; /* bottom align */
+    gap: 24px; /* 피그마: 로고-링크 간격 24px */
+  }
+
+  .footer-left {
+    gap: 24px; /* 피그마: 로고-copyright 간격 24px */
+  }
+
+  .footer-logo {
+    width: 82px; /* 피그마: 82px */
+    height: 23px; /* 피그마: 23px */
+  }
+
+  .footer-copyright {
+    font-size: 13px; /* 피그마: 13px */
+    line-height: 18px; /* 피그마: 18px */
+    color: #737373; /* 피그마: gray600 */
+    white-space: normal; /* 줄바꿈 허용 */
+    word-break: break-word; /* 단어 단위로 줄바꿈 */
+    width: 100%;
+  }
+
+  .footer-links {
+    flex-wrap: wrap; /* 링크들이 줄바꿈 되게 */
+    gap: 24px; /* 피그마: 링크 간 간격 24px */
+  }
+
+  .footer-link {
+    font-size: 13px; /* 피그마: 13px */
+    line-height: 18px; /* 피그마: 18px */
+    color: #444; /* 피그마: gray700 */
+    white-space: normal; /* 텍스트 줄바꿈 허용 */
+  }
 }
+
